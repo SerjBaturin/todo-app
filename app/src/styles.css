@@ -1,0 +1,54 @@
+:root {
+  font-family: sans-serif;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+/*
+  =====================
+  Sidebar
+  ======================
+*/
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  width: 25%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 1em;
+  background: linear-gradient(60deg, #dcffff, #f2deff);
+  border-right: 1px solid #cacaca;
+}
+.sidebar h1 {
+  margin-top: 0;
+}
+.sidebar form {
+  margin-left: auto;
+  margin-bottom: 1rem;
+}
+.sidebar form input {
+  padding: 1em;
+  border: none;
+}
+.sidebar form input:nth-child(2) {
+  background: #ec82d2;
+  margin-left: 1em;
+}
+.sidebar .categorie {
+  padding: 1em;
+  margin-bottom: 1px;
+  background-color: white;
+  cursor: pointer;
+}
+.sidebar .categorie:hover {
+  transform: scale(1.05);
+  box-shadow: 10px 10px 10px #cacaca;
+  transition: all 0.2s ease-in-out;
+}
