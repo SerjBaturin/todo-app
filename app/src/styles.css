@@ -12,6 +12,16 @@ body {
 
 /*
   =====================
+  App
+  ======================
+*/
+
+.app {
+  display: flex;
+}
+
+/*
+  =====================
   Sidebar
   ======================
 */
@@ -23,7 +33,7 @@ body {
   min-height: 100vh;
   height: 100%;
   padding: 1em;
-  background: linear-gradient(60deg, #dcffff, #f2deff);
+  background: linear-gradient(to right top, #dcffff, #f2deff);
 }
 .sidebar h1 {
   margin-top: 0;
@@ -55,4 +65,46 @@ body {
   transform: scale(1.05);
   box-shadow: 10px 10px 10px #cacaca;
   transition: all 0.2s ease-in-out;
+}
+
+/*
+  =====================
+  Todo Wrapper
+  ======================
+*/
+
+.todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1em;
+  background: #cacaca;
+}
+.todo-wrapper h1 {
+  margin-top: 0;
+}
+
+/*
+  =====================
+  Todo Header
+  ======================
+*/
+
+.todo-header {
+  background-color: #fff;
+}
+.todo-header h1 {
+  margin-top: 0;
+}
+/*
+  =====================
+  Todo Body
+  ======================
+*/
+
+.todo-body {
+  background-color: #e4e4e4;
+}
+.todo-body h1 {
+  margin-top: 0;
 }

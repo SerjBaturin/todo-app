@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const TodoHeader = () => (
-  <div className="todo-header">
-    <h1>TodoHeader</h1>
-  </div>
-)
+class TodoHeader extends Component {
 
-export default TodoHeader
+  render() {
+    const  todoCathegorie  = this.props.todoCathegorie
+    return (
+      <div className="todo-header">
+        <h1>{todoCathegorie}</h1>
+      </div>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    todoCathegorie: state.todoCathegorie,
+  }
+}
+
+export default connect(mapStateToProps)(TodoHeader)

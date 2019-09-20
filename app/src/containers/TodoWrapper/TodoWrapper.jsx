@@ -1,8 +1,11 @@
 import React from 'react'
+import TodoHeader from '../TodoHeader'
+import TodoBody from '../TodoBody'
 
 const TodoWrapper = () => (
   <div className="todo-wrapper">
-    <h1>TodoWrapper</h1>
+    <TodoHeader />
+    <TodoBody />
   </div>
 )
 
