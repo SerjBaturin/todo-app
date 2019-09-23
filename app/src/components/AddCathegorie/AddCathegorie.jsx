@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
+import { connect } from 'react-redux'
 
-class AddBtn extends Component {
+class AddCathegorie extends Component {
   state = {
     inputText: '',
   }
@@ -12,8 +13,9 @@ class AddBtn extends Component {
     })
   }
 
-  handleSubmit = () => {
-    localStorage.setItem(this.state.inputText, new Date())
+  handleSubmit = e => {
+    e.preventDefault()
+    this.props.onHandleSubmit(this.state.inputText)
     this.setState({
       inputText: '',
     })
@@ -38,4 +40,13 @@ class AddBtn extends Component {
   }
 }
 
-export default AddBtn
+const mapDispatchToProps = dispatch => ({
+  onHandleSubmit: item => {
+    dispatch({ type: 'ADD_CATHEGORIE', payload: item })
+  },
+})
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(AddCathegorie)

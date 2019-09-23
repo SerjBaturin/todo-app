@@ -1,37 +1,30 @@
-import React, { Component } from 'react'
-import AddBtn from '../../components/AddButton'
+import React from 'react'
+import AddCathegorie from '../../components/AddCathegorie'
+import DeleteAllData from '../../components/DeleteAllData'
 import { connect } from 'react-redux'
 
-class Sidebar extends Component {
-  state = {
-    categories: this.props.categories,
-  }
-
-  render() {
-    const { categories } = this.state
-    return (
-      <div className="sidebar">
-        <h1>Todo App With React</h1>
-        <h2>Categories</h2>
-        <AddBtn />
-        {categories.map((item, i) => (
-          <div
-            className="categorie"
-            key={i}
-            onClick={() => {
-              this.props.onHandleClick(item)
-            }}
-          >
-            {item}
-          </div>
-        ))}
+const Sidebar = props => (
+  <div className="sidebar">
+    <h1>Todo App With React</h1>
+    <h2>Categories</h2>
+    <AddCathegorie />
+    {props.cathegories.map((item, i) => (
+      <div
+        className="cathegorie"
+        key={i}
+        onClick={() => {
+          props.onHandleClick(item)
+        }}
+      >
+        {item}
       </div>
-    )
-  }
-}
+    ))}
+    <DeleteAllData />
+  </div>
+)
 
 const mapStateToProps = state => {
-  return { categories: state.categories }
+  return { cathegories: state.cathegories }
 }
 
 const mapDispatchToProps = dispatch => ({

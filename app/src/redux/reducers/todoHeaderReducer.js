@@ -1,4 +1,4 @@
-const initialState = ''
+const initialState = Object.keys(localStorage)[0] || 'There are no cathegories'
 
 const todoHeaderReducer = (state = initialState, action) => {
   switch (action.type) {
