@@ -35,10 +35,12 @@ class AddTodo extends Component {
             value={inputText}
             placeholder="add todo"
             onChange={this.handleInputChange}
+            maxLength="100"
             required
           />
           <input type="submit" value="add" />
         </form>
+        <span className="max-length">max: 100 characters</span>
       </Fragment>
     )
   }

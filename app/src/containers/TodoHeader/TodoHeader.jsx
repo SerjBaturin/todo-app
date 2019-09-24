@@ -1,20 +1,15 @@
-import React, { Component, Fragment } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import AddTodo from '../../components/AddTodo'
 
-class TodoHeader extends Component {
-
-  render() {
-    const  todoCathegorie  = this.props.todoCathegorie
-    return (
-      <Fragment>
-      <div className="todo-header">
-        <h1>{todoCathegorie}</h1>
-        <AddTodo todoCathegorie={todoCathegorie} />
-      </div>
-      </Fragment>
-    )
-  }
+const TodoHeader = props => {
+  const todoCathegorie = props.todoCathegorie
+  return (
+    <div className="todo-header">
+      <h2>{todoCathegorie}</h2>
+      <AddTodo todoCathegorie={todoCathegorie} />
+    </div>
+  )
 }
 
 const mapStateToProps = state => {

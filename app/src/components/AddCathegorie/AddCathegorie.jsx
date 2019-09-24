@@ -31,10 +31,12 @@ class AddCathegorie extends Component {
             value={inputText}
             placeholder="add category"
             onChange={this.handleInputChange}
+            maxLength="20"
             required
           />
           <input type="submit" value="add" />
         </form>
+        <span className="max-length">max: 20 characters</span>
       </Fragment>
     )
   }
