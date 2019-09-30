@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
 import { connect } from 'react-redux'
+import {addTodoAction} from '../../redux/actions/addTodoAction'
+import {showDataAction} from '../../redux/actions/showDataAction'
 
 class AddTodo extends Component {
   state = {
@@ -15,11 +17,9 @@ class AddTodo extends Component {
 
   handleSubmit = e => {
     e.preventDefault()
-    const cathegorie = this.props.todoCathegorie
+    const cathegorie = this.props.cathegorie
     const todo = this.state.inputText
-
-    this.props.onHandleClick(cathegorie, todo)
-
+    this.props.onHandleSubmit(cathegorie, todo)
     this.setState({
       inputText: '',
     })
@@ -47,14 +47,9 @@ class AddTodo extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onHandleClick: (cathegorie, todo) => {
-    dispatch({
-      type: 'ADD_TODO',
-      payload: {
-        cathegorie,
-        todo,
-      },
-    })
+  onHandleSubmit: (cathegorie, todo) => {
+    dispatch(addTodoAction(cathegorie, todo))
+    dispatch(showDataAction(cathegorie))
   },
 })
 

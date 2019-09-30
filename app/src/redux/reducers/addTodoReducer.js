@@ -1,9 +1,9 @@
 const addTodoReducer = (state = '', action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      let str = action.payload.todo + '|'
-      let allString = localStorage.getItem(action.payload.cathegorie) + str
-      localStorage.setItem(action.payload.cathegorie, allString)
+      const { cathegorie, todo } = action.payload
+      const todos = localStorage.getItem(cathegorie) + todo + '|'
+      localStorage.setItem(cathegorie, todos)
       return null
     default:
       return state

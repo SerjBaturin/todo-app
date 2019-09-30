@@ -2,19 +2,18 @@ import React from 'react'
 import AddCathegorie from '../../components/AddCathegorie'
 import DeleteAllData from '../../components/DeleteAllData'
 import { connect } from 'react-redux'
+import { showDataAction } from '../../redux/actions/showDataAction'
 
 const Sidebar = props => (
   <div className="sidebar">
-    <h1>Todo App With React</h1>
-    <h2>Categories</h2>
+    <h1>Let's Todo</h1>
+    <h2>Cathegories</h2>
     <AddCathegorie />
     {props.cathegories.map((item, i) => (
       <div
         className="cathegorie"
         key={i}
-        onClick={() => {
-          props.onHandleClick(item)
-        }}
+        onClick={() => props.onHandleClick(item)}
       >
         {item}
       </div>
@@ -28,8 +27,8 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onHandleClick: item => {
-    dispatch({ type: 'SHOW_HEADER', payload: item })
+  onHandleClick: cathegorie => {
+    dispatch(showDataAction(cathegorie))
   },
 })
 

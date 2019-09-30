@@ -13,12 +13,10 @@ body {
 body {
   display: flex;
   justify-content: center;
-  /* background-color: #f7feff; */
-  /* background-color: #17178f; */
-  /* background-color: brown; */
   background: url('./fon0.jpg') no-repeat;
   background-position: bottom;
   background-size: cover;
+  background-attachment: fixed;
 
   /* background: linear-gradient(to left top, #dcffff, #f2deff); */
 }
@@ -47,8 +45,12 @@ body {
   min-height: 97vh;
   height: 100%;
   padding: 1em;
-  background-color: #cef9ff;
-  /* background: linear-gradient(to right top, #dcffff, #f2deff); */
+  /* background-color: rgba(204, 249, 254, 0); */
+  background: linear-gradient(
+    to right top,
+    rgba(0, 68, 255, 0.3),
+    rgba(255, 0, 255, 0.3)
+  );
 }
 .sidebar h1 {
   margin-top: 0;
@@ -63,6 +65,10 @@ body {
 .sidebar form input:nth-child(1) {
   width: 100%;
   margin-right: 1em;
+  color: #17178f;
+}
+.sidebar form input:nth-child(1)::placeholder {
+  color: #17178f9a;
 }
 .sidebar form input:nth-child(2) {
   background: #17178f;
@@ -76,7 +82,7 @@ body {
   margin-top: 0.5em;
   margin-bottom: 1em;
   font-size: 0.75rem;
-  color: #999;
+  color: #17178f;
 }
 .sidebar .cathegorie {
   padding: 1em;
@@ -87,7 +93,7 @@ body {
 }
 .sidebar .cathegorie:hover {
   transform: scale(1.05);
-  box-shadow: 10px 10px 10px #cacaca;
+  box-shadow: 0px 10px 12px #333;
   transition: all 0.2s ease-in-out;
 }
 .sidebar .delete-all-data {
@@ -116,69 +122,84 @@ body {
   flex-direction: column;
   width: 100%;
   padding: 1em;
-  background: rgba(255,255,255,.8);
+  background: rgba(255, 255, 255, 0.9);
 }
-.todo-wrapper h1 {
+.todo-wrapper h2 {
   margin-top: 0;
-}
-
-/*
-  =====================
-  Todo Header
-  ======================
-*/
-
-.todo-header {
-  /* background-color: #fff; */
-}
-.todo-header h2 {
-  width: 100%;
-  margin-top: 0;
-  word-wrap: break-word;
   font-size: 2rem;
 }
-.todo-header form {
+.todo-wrapper form {
   display: flex;
 }
-.todo-header form input {
+.todo-wrapper form input {
   padding: 1em;
-}
-.todo-header form input:nth-child(1) {
-  width: 50%;
-  margin-right: 1em;
-  background-color: rgba(255,255,255,0);
-  border: 1px solid #17178f;
-}
-.todo-header form input:nth-child(2) {
-  background: #17178f;
   border: none;
-  color: #fff;
+}
+.todo-wrapper form input:nth-child(1) {
+  width: 100%;
+  margin-right: 1em;
+  border: 1px solid #17178f9a;
+  color: #17178f;
+}
+.todo-wrapper form input:nth-child(1)::placeholder {
+  color: #17178f9a;
+}
+.todo-wrapper form input:nth-child(2) {
+  background: #17178f;
   font-weight: bold;
   letter-spacing: 1px;
+  color: #fff;
   cursor: pointer;
 }
-.todo-header .max-length {
-  display: inline-block;
+.todo-wrapper .max-length {
   margin-top: 0.5em;
   margin-bottom: 1em;
   font-size: 0.75rem;
-  color: #999;
+  color: #17178f9a;
 }
-
-/*
-  =====================
-  Todo Body
-  ======================
-*/
-
-.todo-body {
+.todo-wrapper ul {
+  padding-left: 0;
+  list-style: none;
+}
+.todo-wrapper ul li {
   display: flex;
-  flex-direction: column;
-  /* background-color: #fff; */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5em;
+  font-size: 1.2rem;
 }
-.todo-body ul {
-  list-style-type: decimal;
+.delete-todo-btn {
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  cursor: pointer;
 }
-.todo-body ul li {
-  font-size: 1.5rem;
+.delete-todo-btn::before,
+.delete-todo-btn::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 20px;
+  margin-left: 8px;
+  background-color: #17178f;
+}
+.delete-todo-btn::before {
+  transform: rotate(45deg);
+}
+.delete-todo-btn::after {
+  transform: rotate(-45deg);
+}
+.delete-cathegorie {
+  margin-left: auto;
+}
+.delete-cathegorie button {
+  padding: 1em;
+  border: none;
+  background-color: #17178f;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
 }

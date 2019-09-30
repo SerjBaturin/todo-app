@@ -1,12 +1,16 @@
 import { combineReducers } from 'redux'
-import todoHeader from './todoHeaderReducer'
-import addTodo from './addTodoReducer'
-import addCathegorie from './addCathegorieReducer'
+import cathegories from './addCathegorieReducer'
 import deleteAllData from './deleteAllDataReducer'
+import showData from './showDataReducer'
+import addTodo from './addTodoReducer'
+import deleteCathegorie from './deleteCathegorieReducer'
+import deleteTodo from './deleteTodoReducer'
 
 export default combineReducers({
-  todoCathegorie: todoHeader,
-  todos: addTodo,
-  cathegories: addCathegorie,
+  cathegories,
+  showData,
+  addTodo,
+  deleteTodo,
+  deleteCathegorie,
   deleteAllData,
 })

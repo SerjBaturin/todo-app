@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Fragment } from 'react'
 import { connect } from 'react-redux'
+import { addCathegorieAction } from '../../redux/actions/addCathegorieAction'
+import { showDataAction } from '../../redux/actions/showDataAction'
 
 class AddCathegorie extends Component {
   state = {
@@ -29,7 +31,7 @@ class AddCathegorie extends Component {
           <input
             type="text"
             value={inputText}
-            placeholder="add category"
+            placeholder="add cathegory"
             onChange={this.handleInputChange}
             maxLength="20"
             required
@@ -43,8 +45,9 @@ class AddCathegorie extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onHandleSubmit: item => {
-    dispatch({ type: 'ADD_CATHEGORIE', payload: item })
+  onHandleSubmit: cathegorie => {
+    dispatch(addCathegorieAction(cathegorie))
+    dispatch(showDataAction(cathegorie))
   },
 })
 
